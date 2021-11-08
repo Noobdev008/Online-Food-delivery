@@ -1,0 +1,54 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap:  2%;
+    height: 75px;
+    background-color: blue;
+}
+nav button{
+    padding: 1px;
+    color: brown;
+    background-color: bisque;
+    outline: none;
+    cursor: pointer;
+}
+form{
+    width: 60%;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px 0;
+}
+input{
+    width: 50%;
+    padding: 10px 0;
+    text-align: center;
+}
+#meal{
+    width: 30%;
+    margin: auto;
+    padding: 20px 0;
+}
+img{
+    width: 100%;
+}
+p{
+    padding: 10px 0;
+}
+#cartMeal{
+    width: 80%;
+    margin: auto;
+    padding: 20px 0;
+}
+#placeOredr{
+    width: 80%;
+    margin: auto;
+    padding: 20px 0;
+}

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav>
+
+    </nav>
+    <form action="" onsubmit="signup(event)" id="signupForm">
+        <input type="text" name="" id="name" placeholder="Name"><br>
+        <input type="text" name="" id="email" placeholder="Email"><br>
+        <input type="password" name="" id="password" placeholder="Password"><br>
+        <input type="text" name="" id="user" placeholder="User Name"><br>
+        <input type="number" name="" id="mobile" placeholder="Mobile"><br>
+        <input type="text" name="" id="disc" placeholder="Description"><br>
+        <input type="submit" name="" id="btn">
+    </form>
+</body>
+</html>
+<script type="module">
+    import navbar from "./navbar.js"
+    document.getElementsByTagName('nav')[0].innerHTML = navbar();
+</script>
+<script src="signup.js"></script>
+<script>
+    function signup(e){
+        e.preventDefault();
+        let myForm = document.getElementById("signupForm");
+        let obj = {
+            name: myForm.name.value,
+            email: myForm.email.value,
+            password: myForm.password.value,
+            username: myForm.user.value,
+            mobile: myForm.mobile.value,
+            description: myForm.disc.value
+        }
+        console.log(obj);
+        fetch('https://masai-api-mocker.herokuapp.com/auth/register', {
+            method: 'POST',
+            body: JSON.stringify(obj),
+            headers:{
+                'Content-Type': 'application/json',
+            },
+        })
+        .then((res) => {
+            return res.json();
+        })
+        .then((res) => {
+            alert(res.message);
+        })
+        .catch((err) => {
+           alert(err.message);
+        })
+
+    }
+</script>
